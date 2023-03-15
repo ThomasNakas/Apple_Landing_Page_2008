@@ -1,0 +1,270 @@
+/* =====================tags========================= */
+*{
+    margin:0;
+}
+
+body{
+    padding:1em 3rem;
+    color:rgb(240,240,255,0.7);
+margin: auto;
+display: grid;
+}
+
+footer{
+    padding:2em 8em;
+    font-size: x-small;
+    display:flex;
+    color: grey;
+    justify-content: center;
+    align-items: center;
+}
+footer > div{
+    flex:1
+}
+
+
+
+
+
+
+
+
+
+
+/* =================Body main classes============================= */
+.body_main{
+
+    margin: auto;
+    max-width: 1200px;
+    height: 800px;
+    display: grid;
+    color: aliceblue;
+    text-align: center;
+    grid-template-areas: "main main main main"
+                          "ph1 ph2 ph3 ph4";
+    grid-template-rows: 10fr 3.2fr;
+    grid-gap:0.3em  
+}
+
+/*----------- main theme photo------------- */
+.main_image{
+    grid-area:main;
+    background-image:linear-gradient(to right,rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0)),url(images/your_verse_hero.jpg);
+    background-position: 40% 80%;
+    /*positioning its items */
+    display: grid;
+}
+/* --------------Main image's Children-------------- */
+
+
+/* ---------------------------------nav bar-------------------------------- */
+.nav_bar{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.466), grey,rgb(61, 61, 61),black,grey);
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    border-radius: 0.7em;
+    margin: auto;
+    padding: 0.5em;
+}
+
+
+.nav_bar :nth-child(n){
+    padding: 0.7em;
+}
+.nav_bar a{
+    text-decoration: none;
+color: antiquewhite;
+}
+.nav_bar a:hover{
+ opacity: 0.7;
+}
+/* -------------search inside the nav bar container-------- */
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5em;
+    background: linear-gradient(to bottom, rgba(184, 184, 184, 0.308), rgb(82, 82, 82),rgb(61, 61, 61),rgb(41, 41, 41),rgb(68, 68, 68));
+    height: 2em;
+    max-width: max-content;
+    justify-content: space-between;
+    flex:0 2;
+    transition: 500ms;
+    box-shadow: 0 0 5px black;
+}
+
+.submit_searching{
+    flex-shrink:2;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    padding-left: 0.5em;
+    transition: 500ms ease;
+
+
+}
+.submit_searching:focus{
+   outline:0;
+   color: antiquewhite;
+
+}
+
+/* -------------Main and Secondary Titles---------------- */
+
+
+.text_cont{
+    padding: 0em 13em;
+    justify-self: center;
+    font-family: 'Roboto', sans-serif;
+}
+#main_title{
+    font-size:2.5em;
+    font-weight:100 ;
+    letter-spacing: 0.04em;
+}
+
+#secondary_title{
+    font-size:1.5em;
+    font-weight:100;
+}
+
+.hidden_class{
+    color:transparent;
+}
+
+/* ------------- sedondary photos------------- */
+.photo1{ 
+    grid-area:ph1;
+    background-image: linear-gradient(to right,rgba(5, 5, 5, 0.397),transparent,transparent), url(images/promo_iphone5s.jpg);
+    
+}
+
+.photo1:hover::after{
+    grid-area:ph1;
+}
+.photo2{
+    grid-area:ph2;
+    background-image:linear-gradient(to right,rgba(0, 0, 0, 0.384),transparent,transparent), url(images/promo_iphone5c.jpg);
+}
+.photo3{
+    grid-area: ph3;
+    background-image:linear-gradient(to right,rgba(0, 0, 0, 0.39),transparent,transparent), url(images/promo_30_years.jpg);
+}
+.photo4{
+    grid-area: ph4;
+    background-image:linear-gradient(to right,rgba(0, 0, 0, 0.363),transparent,transparent), url(images/promo_supplier_responsibility.jpg);
+}
+div[class*="photo"]{
+}
+.body_main button{
+    border:none;
+    transition: 700ms ease;
+
+}
+.body_main button:hover{
+    border: 0.5px solid grey;
+    opacity: 0.9;
+    z-index: 1;
+    width:100%;
+    margin-right:7em ;
+    border-radius: 1em;
+    box-shadow: 0 0 9px rgb(43, 43, 43);
+}
+/*------------------------------- footer classes------------------------ */
+
+
+
+
+footer a{  text-decoration: none;
+    color: rgb(109, 85, 250);
+    font-weight: 300;
+}
+footer a:hover{
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.leftFooter{
+    align-items: center;
+    justify-content: center;
+    flex:0 1 450px;
+}
+
+.rightFooter{
+    align-items: center;
+    justify-content: center;
+    height: 5em;
+    flex:0 1 600px;
+    display: flex;
+}
+.rightFooter > p{
+    border-right:0.1em solid;
+    padding: 0.5em;
+}
+
+/*======================media queries===========================*/
+
+/*------------------Tags--------------------- */
+/* -----------------Classes------------------ */
+@media only screen and (max-width:1100px){
+    footer{
+     display: grid;
+     text-align: center;
+    }
+    
+    .nav_bar{
+        font-size:x-small;
+        }
+    .text_cont{
+            padding: 2em 7em;
+            justify-self: flex-end;
+            font-family: 'Roboto', sans-serif;
+        }
+}
+@media only screen and (max-width:900px){
+    .nav_bar{
+        font-size:x-small;
+        }
+        .body_main button:hover{
+            margin-right: 17em;
+        }
+        .text_cont{
+            padding: 1em 4em;
+            justify-self: flex-end;
+            font-family: 'Roboto', sans-serif;
+        }
+    .submit_searching{
+        max-width: 5em;
+    }
+}
+
+@media only screen and (max-width:650px){
+    footer{
+        
+        align-self:center ;}
+    
+    .nav_bar{
+        font-size:xx-small;
+        }
+        body{
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        margin: none;
+        }
+        .text_cont{
+            padding: 1em 1em;
+            justify-self: flex-end;
+            font-family: 'Roboto', sans-serif;
+        }
+        .submit_searching{
+            max-width: 2em;
+        }
+}
+
+
+
+/* ------------------Id's-------------- ----- */
